@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Auth
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: ${DB_USERNAMEA}
+    password: ${DB_PASSWORDA}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/auth_db
+    user: ${DB_USERNAMEM}
+    password: ${DB_PASSWORDM}
+    locations:
+      - classpath:db/migration
