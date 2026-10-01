@@ -11,12 +11,6 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<UtilisateurRequest> register(
             @RequestBody UtilisateurRequest request) {
-
-        System.out.println("Nom : " + request.getNom());
-        System.out.println("Prénom : " + request.getPrenom());
-        System.out.println("Password : " + request.getPassword());
-        System.out.println("Email : " + request.getEmail());
-
         return ResponseEntity.ok(request);
     }
 }
