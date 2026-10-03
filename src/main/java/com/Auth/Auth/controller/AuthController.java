@@ -1,5 +1,7 @@
 package com.Auth.Auth.controller;
 
+import com.Auth.Auth.dto.AuthResponse;
+import com.Auth.Auth.dto.LoginRequest;
 import com.Auth.Auth.dto.UtilisateurRequest;
 import com.Auth.Auth.service.AuthService;
 import jakarta.validation.Valid;
@@ -23,5 +25,13 @@ public class AuthController {
 
         return ResponseEntity.ok(authService.register(request));
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(
+            @Valid @RequestBody LoginRequest request) {
+
+        return ResponseEntity.ok(authService.login(request));
+    }
+
 
 }
